@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.huajivideo.tool"
-        minSdkVersion 14
-        targetSdkVersion 21
+        minSdkVersion 19
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -18,7 +18,13 @@ android {
         }
     }
 }
-
+repositories {
+    flatDir {
+        dirs 'libs' //this way we can find the .aar file in libs folder
+    }
+}
 dependencies {
+	//compile(name:'mediaencoder', ext:'aar')
+	
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
